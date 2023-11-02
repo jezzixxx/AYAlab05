@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,7 @@ internal class Task3
         foreach (string val in test[5]) Console.WriteLine(val);
     }
 }
-public class MyDictionary<TKey, TValue>
+public class MyDictionary<TKey, TValue> : IEnumerable
 {
     public class Elem
     {
@@ -69,7 +69,7 @@ public class MyDictionary<TKey, TValue>
     public IEnumerator GetEnumerator() => Arr.GetEnumerator();
     public void Add(Elem el)
     {
-        if (Indexes[el.Index] != -1) { Console.WriteLine("Here"); el.Next = Indexes[el.Index]; }
+        if (Indexes[el.Index] != -1) { el.Next = Indexes[el.Index]; }
         if (Arr == null) Indexes[el.Index] = 0;
         else Indexes[el.Index] = Arr.Length;
         if (Arr != null)
