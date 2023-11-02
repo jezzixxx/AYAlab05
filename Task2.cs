@@ -1,4 +1,5 @@
-﻿//using System;
+//using System;
+//using System.Collections;
 
 //internal class Task2
 //{
@@ -8,17 +9,17 @@
 //        Console.WriteLine(test.Count);
 //        test.Add(11);
 //        test.Add(82);
-//        foreach (int i in test.List) { Console.WriteLine(i); }
+//        foreach (int i in test) { Console.WriteLine(i); }
 //        test.Add(32);
 //        Console.WriteLine(test.Count);
 //        test.Add(41);
 //        Console.WriteLine($"{test[0]} {test[2]} {test[3]}");
-//        MyList<int> test1 = new MyList<int>(new int[] { 22, 11, 66, 34 });
+//        MyList<int> test1 = new MyList<int>{ 22, 11, 66, 34 };
 //        Console.WriteLine(test1.Count);
-//        foreach (int i in test1.List) { Console.Write($"{i} "); }
+//        foreach (int i in test1) { Console.Write($"{i} "); }
 //    }
 //}
-//public class MyList<T>
+//public class MyList<T> : IEnumerable
 //{
 //    private T[]? _list;
 //    public MyList() { }
@@ -27,6 +28,7 @@
 //        _list = list;
 //    }
 //    public T[] List { get => _list; set => _list = value; }
+//    public IEnumerator GetEnumerator() => List.GetEnumerator();
 //    public void Add(T value)
 //    {
 //        if (List != null)
